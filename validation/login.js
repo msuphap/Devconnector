@@ -11,12 +11,12 @@ module.exports = function validateLoginInput(data) {
     errors.email = 'Email field is required';
   }
 
-  if (!validator.isEmail(data.email)) {
+  if (!Validator.isEmail(data.email)) {
     errors.email = 'Email is invalid';
   }
 
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = 'Name must be between 6 and 30 characters';
+    errors.password = 'Password must be between 6 and 30 characters';
   }
 
   if (Validator.isEmpty(data.password)) {
